@@ -47,19 +47,15 @@ $secretKey="Secret Key";
 - **身份证识别**
 ```php
     
-     * @param array $options - 可选参数对象，key: value都为string类型
-     * @description options列表:
-     *   detect_direction 是否检测图像朝向，默认不检测，即：false。朝向是指输入图像是正常方向、逆时针旋转90/180/270度。可选值包括:<br>- true：检测朝向；<br>- false：不检测朝向。
-     *   detect_risk 是否开启身份证风险类型(身份证复印件、临时身份证、身份证翻拍、修改过的身份证)功能，默认不开启，即：false。可选值:true-开启；false-不开启
-     * @return array
 
-//图片路径 支持绝对路径和 网址
-$pic_url="";
+
 //$idCardSide - front：身份证含照片的一面；back：身份证带国徽的一面  默认：front 不必填
 //$options列表:  //数组包含以下参数 不必填
-     *   detect_direction 是否检测图像朝向，默认不检测，即：false。朝向是指输入图像是正常方向、逆时针旋转90/180/270度。可选值包括:<br>- true：检测朝向；<br>- false：不检测朝向。
-     *   detect_risk 是否开启身份证风险类型(身份证复印件、临时身份证、身份证翻拍、修改过的身份证)功能，默认不开启，即：false。可选值:true-开启；false-不开启
-     
+//detect_direction 是否检测图像朝向，默认不检测，即：false。朝向是指输入图像是正常方向、逆时针旋转90/180/270度。可选值包括:<br>- true：检测朝向；<br>- false：不检测朝向。
+//detect_risk 是否开启身份证风险类型(身份证复印件、临时身份证、身份证翻拍、修改过的身份证)功能，默认不开启，即：false。可选值:true-开启；false-不开启
+    
+//图片路径 支持绝对路径和 网址
+$pic_url="";
 
 $baidu= new baiduapi\BaiduDiscern($appId,$apiKey,$secretKey);
 $baidu->idCardDiscern(file_get_contents($pic_url),$idCardSide,$options);
